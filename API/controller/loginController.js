@@ -3,6 +3,7 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const db = require("../db");
 const bcrypt = require("bcrypt");
+const cookies = require("cookie-parser")
 
 
 exports.login = async (req, res) => {
@@ -51,6 +52,14 @@ exports.login = async (req, res) => {
 
     const updateUserToken = "UPDATE users SET refresh_token = ? where user_id = ?"
     await db.query(updateUserToken,[refreshToken, result[0].user_id])
+
+    res.cookie("refreshToken",refreshToken,{
+      httpOnly:true,
+      secure: process.env.NODE_ENV === "production", // true in production
+      sameSite: "Strict",
+      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+
+    })
 
     res.status(200).json({
       accesToken: accesToken,

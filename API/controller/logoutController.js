@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken")
 
 exports.logout = async (req,res) =>{
     try {
+        res.clearCookie('refreshToken');
         const authHeader = req.headers["authorization"];
         const {refreshToken} = req.body
         console.log("Received refreshToken:", refreshToken);

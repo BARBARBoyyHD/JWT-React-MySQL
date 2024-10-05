@@ -1,0 +1,40 @@
+.section{
+    min-height: 100vh;
+    border: 1px solid black;
+    display: flex;
+}
+.box1{
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.box1 button{
+    padding: 10px;
+    background-color: black;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.box1 button:hover {
+    border-radius: 10px;
+    color: #282c34;
+    background-color: #61dafb;
+    transition: background-color 1s ease-in-out, border-radius 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+.link{
+    text-decoration: none;
+    color: white;
+}
+
+.box2{
+    width: 100%;
+    border: 1px solid black;
+    background: url("../asset/jwt_01.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

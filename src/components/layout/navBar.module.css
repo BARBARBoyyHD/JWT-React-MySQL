@@ -1,0 +1,43 @@
+/* navBar.module.css */
+.container {
+    background-color: #282c34; /* Dark background for the nav bar */
+    padding: 20px; /* Space around the header */
+    color: white; /* Text color */
+  }
+  
+  .header {
+    display: flex; /* Flex layout for header */
+    justify-content: space-between; /* Space between title and navigation */
+    align-items: center; /* Center items vertically */
+  }
+  
+  h1 {
+    font-size: 24px; /* Size of the title */
+    margin: 0; /* Remove default margin */
+  }
+  
+  .navigation {
+    display: flex; /* Flex layout for navigation */
+  }
+  
+  .navList {
+    list-style: none; /* Remove default list style */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    display: flex; /* Horizontal layout for nav items */
+  }
+  
+  .navItem {
+    margin-left: 20px; /* Space between nav items */
+  }
+  
+  .navLink {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  .navLink:hover {
+    color: #61dafb; /* Change color on hover */
+  }
+  

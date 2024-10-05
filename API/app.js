@@ -1,8 +1,9 @@
 const express = require("express");
 const app = express();
 const port = 5252;
+const cookieParser = require("cookie-parser")
 
-
+app.use(cookieParser())
 app.use(express.json());
 
 app.post("/register", require("./routes/register"))

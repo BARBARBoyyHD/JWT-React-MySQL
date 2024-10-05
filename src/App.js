@@ -1,10 +1,13 @@
-import Register from "./components/Register";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; 
+import Homepage from "./pages/homePage";
 
 function App() {
   return (
-   <main className="App">
-    <Register />
-   </main>
+    <Router>      
+      <Routes>
+        <Route path="/" element={<Homepage />}/>
+      </Routes>
+    </Router>
   );
 }
 
