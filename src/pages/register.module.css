@@ -1,0 +1,82 @@
+/* register.module.css */
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+  }
+  
+  .box_Register {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .box_Register h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .wrap_input {
+    margin-bottom: 20px;
+  }
+  
+  .wrap_input label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .wrap_input input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+  }
+  
+  .wrap_input input:focus {
+    border-color: #61dafb;
+  }
+  
+  .wrap_button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .wrap_button button {
+    padding: 10px 20px;
+    background-color: #61dafb;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .wrap_button button:hover {
+    background-color: #3a9ddf;
+  }
+  
+  .link {
+    color: #61dafb;
+    text-decoration: none;
+  }
+  
+  .link:hover {
+    color: #3a9ddf;
+  }
+  

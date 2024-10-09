@@ -3,8 +3,7 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const db = require("../db");
 const bcrypt = require("bcrypt");
-const cookies = require("cookie-parser")
-
+const cookies = require("cookie-parser");
 
 exports.login = async (req, res) => {
   try {
@@ -39,27 +38,39 @@ exports.login = async (req, res) => {
         username: result[0].username,
         email: result[0].email,
         password: result[0].user_password,
-        refreshToken:result[0].refresh_token
+        refreshToken: result[0].refresh_token,
       },
       process.env.ACCESS_TOKEN_SECRET,
-      { expiresIn: "30s" }
+      { expiresIn: "1h" }
     );
     const refreshToken = jwt.sign(
-      { userId: result[0].user_id, username: result[0].username, email: result[0].email, password: result[0].password},
+      {
+        userId: result[0].user_id,
+        username: result[0].username,
+        email: result[0].email,
+        password: result[0].password,
+      },
       process.env.REFRESH_TOKEN_SECRET,
-      { expiresIn: "30s" }
+      { expiresIn: "7d" }
     );
 
-    const updateUserToken = "UPDATE users SET refresh_token = ? where user_id = ?"
-    await db.query(updateUserToken,[refreshToken, result[0].user_id])
-
-    res.cookie("refreshToken",refreshToken,{
-      httpOnly:true,
+    const updateUserToken =
+      "UPDATE users SET refresh_token = ? where user_id = ?";
+    await db.query(updateUserToken, [refreshToken, result[0].user_id]);
+    res.cookie("AccessToken", accesToken, {
+      httpOnly: true,
       secure: process.env.NODE_ENV === "production", // true in production
       sameSite: "Strict",
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
-
-    })
+    });
+    
+    res.cookie("refreshToken", refreshToken, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production", // true in production
+      sameSite: "Strict",
+      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+    });
+  
 
     res.status(200).json({
       accesToken: accesToken,

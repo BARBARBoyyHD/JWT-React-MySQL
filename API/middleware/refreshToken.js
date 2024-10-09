@@ -5,9 +5,9 @@ const refreshTokenAuth = async (req, res, next) => {
     const refreshToken = req.header("Refresh Token") || req.cookies.refreshToken;
     const decoded = jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET);
     const newAccessToken = jwt.sign(
-      { userId: decoded.userId },
+      { userId: decoded.user_id },
       process.env.ACCESS_TOKEN_SECRET,
-      { expiresIn: "30s" }
+      { expiresIn: "1h" }
     );
 
     req.accessToken = newAccessToken;

@@ -1,0 +1,82 @@
+/* login.module.css */
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f4f8;
+  }
+  
+  .box_Login {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 400px;
+    width: 100%;
+    margin: 20px;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .wrap_input {
+    margin-bottom: 20px;
+  }
+  
+  .wrap_input label {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .wrap_input input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+  
+  .wrap_input input:focus {
+    border-color: #61dafb;
+    outline: none;
+  }
+  
+  .wrap_button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .wrap_button button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #61dafb;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .wrap_button button:hover {
+    background-color: #3a9ddf;
+  }
+  
+  .link {
+    font-size: 14px;
+    color: #61dafb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .link:hover {
+    color: #3a9ddf;
+  }
+  

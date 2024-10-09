@@ -11,7 +11,7 @@ const Homepage = () => {
             <div className={styles.box1}>
                 <h1>Welcome To My Tutorial</h1>
                 <p>Learning JWT auth with MERN stack : MySQL Express React Node.js</p>
-                <button><Link className={styles.link}>Get Started</Link></button>
+                <button><Link to="/login" className={styles.link}>Get Started</Link></button>
             </div>
             <div className={styles.box2}></div>
         </section>
